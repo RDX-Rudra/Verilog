@@ -1,8 +1,16 @@
-**** module/scope: mux1b4to1
+**** module/scope: wb
      Flip-Flops   : 0
-     Logic Gates  : 11
-     LPM[8]: 4 unaccounted
+     Logic Gates  : 0
+**** module/scope: wb.dut
+     Flip-Flops   : 0
+     Logic Gates  : 15
+**** module/scope: wb.tb
+     Flip-Flops   : 0
+     Logic Gates  : 0
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
 **** TOTALS
      Flip-Flops   : 0
-     Logic Gates  : 11
-     LPM[8]: 4 unaccounted
+     Logic Gates  : 15
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
