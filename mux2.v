@@ -34,6 +34,8 @@ module wb;
 
     initial begin
         $monitor($time, " a=%b b=%b c=%b d=%b s=%b e=%b", a, b, c, d, s, e);
+        $dumpfile("mux2.vcd");
+        $dumpvars(0,wb);
     end
 
     mux1b4to1 dut(a, b, c, d, s, e);
