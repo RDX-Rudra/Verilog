@@ -1,9 +1,14 @@
 **** module/scope: wb
      Flip-Flops   : 0
      Logic Gates  : 0
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
 **** module/scope: wb.dut
      Flip-Flops   : 0
-     Logic Gates  : 15
+     Logic Gates  : 0
+     LPM[5]: 1 unaccounted
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
 **** module/scope: wb.tb
      Flip-Flops   : 0
      Logic Gates  : 0
@@ -11,6 +16,7 @@
      LOG[14]: 1 unaccounted
 **** TOTALS
      Flip-Flops   : 0
-     Logic Gates  : 15
-     LOG[13]: 1 unaccounted
-     LOG[14]: 1 unaccounted
+     Logic Gates  : 0
+     LPM[5]: 1 unaccounted
+     LOG[13]: 3 unaccounted
+     LOG[14]: 3 unaccounted
