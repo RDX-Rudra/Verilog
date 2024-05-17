@@ -15,10 +15,11 @@ module adder_cum_subtractor4b (
 );
     wire cout1, cout2, cout3;
     wire [3:0]y;
-    xor(y[0], z[0], cin);
-    xor(y[1], z[1], cin);
-    xor(y[2], z[2], cin);
-    xor(y[3], z[3], cin);
+    // xor(y[0], z[0], cin);
+    // xor(y[1], z[1], cin);
+    // xor(y[2], z[2], cin);
+    // xor(y[3], z[3], cin);
+    assign y = {z[3] ^ cin, z[2] ^ cin, z[1] ^ cin, z[0] ^ cin};
     full_adder1b FA1 (x[0], y[0], cin, sum[0], cout1);
     full_adder1b FA2 (x[1], y[1], cout1, sum[1], cout2);
     full_adder1b FA3 (x[2], y[2], cout2, sum[2], cout3);
