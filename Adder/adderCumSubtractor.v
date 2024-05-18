@@ -55,4 +55,5 @@ module wb;
     end
     adder_cum_subtractor4b dut (bin1, bin2, cin, sum, carry);
     tb_adder4b tb (bin1, bin2, cin, sum, carry);
+    
 endmodule
