@@ -11,7 +11,7 @@ module mux1b4to1 (
             2'b11: e=d; 
         endcase
     end
-endmodule
+endmodule //end_of_dut
 
 module tb_mux1b4to1(
     output reg a, b, c, d,
@@ -25,7 +25,7 @@ module tb_mux1b4to1(
         #5 s=2'b11;
         #5 $finish;
     end
-endmodule
+endmodule //end_of_testbench
 
 module wb;
     wire a, b, c, d;
@@ -34,10 +34,10 @@ module wb;
 
     initial begin
         $monitor($time, " a=%b b=%b c=%b d=%b s=%b e=%b", a, b, c, d, s, e);
-        $dumpfile("mux2.vcd");
+        $dumpfile("mux1b4to1_behav.vcd");
         $dumpvars(0,wb);
     end
 
     mux1b4to1 dut(a, b, c, d, s, e);
     tb_mux1b4to1 tb(a, b, c, d, s, e);
-endmodule
+endmodule// end_of_workbench
