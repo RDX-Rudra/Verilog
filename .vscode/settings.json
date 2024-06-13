@@ -1,0 +1,8 @@
+{
+    "editor.fontFamily": "'Jetbrains Mono', 'monospace', monospace",
+    "editor.fontWeight": 552,
+    "editor.fontSize": 16,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+}
