@@ -1,0 +1,10 @@
+#Erasing build Directories
+build/
+
+#Ignoring executables
+*.out
+**/*.out
+
+#Ignoring Video-Compact-Disk(VCD) files generated.
+*.vcd
+**/*.vcd
