@@ -1,0 +1,97 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)" "(v12_0-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/ivl/system.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/ivl/va_math.vpi";
+:vpi_module "/usr/lib/ivl/v2009.vpi";
+S_0x5fe9d7430f70 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x5fe9d7431100 .scope module, "wb_dflipflop" "wb_dflipflop" 3 34;
+ .timescale 0 0;
+v0x5fe9d74476a0_0 .net "Q", 0 0, v0x5fe9d741ed70_0;  1 drivers
+v0x5fe9d7447790_0 .net "Qn", 0 0, v0x5fe9d7446e20_0;  1 drivers
+v0x5fe9d74478a0_0 .net "c", 0 0, v0x5fe9d74474a0_0;  1 drivers
+v0x5fe9d7447990_0 .net "d", 0 0, v0x5fe9d74475a0_0;  1 drivers
+S_0x5fe9d7433cc0 .scope module, "dff" "dflipflop" 3 43, 3 1 0, S_0x5fe9d7431100;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "Q";
+    .port_info 1 /OUTPUT 1 "Qn";
+    .port_info 2 /INPUT 1 "clk";
+    .port_info 3 /INPUT 1 "d";
+v0x5fe9d741ed70_0 .var "Q", 0 0;
+v0x5fe9d7446e20_0 .var "Qn", 0 0;
+v0x5fe9d7446ee0_0 .net "clk", 0 0, v0x5fe9d74474a0_0;  alias, 1 drivers
+v0x5fe9d7446f80_0 .net "d", 0 0, v0x5fe9d74475a0_0;  alias, 1 drivers
+E_0x5fe9d73f8080 .event posedge, v0x5fe9d7446ee0_0;
+S_0x5fe9d74470c0 .scope module, "tb" "tb_dflipflop" 3 44, 3 12 0, S_0x5fe9d7431100;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "clk";
+    .port_info 1 /OUTPUT 1 "d";
+    .port_info 2 /INPUT 1 "Q";
+    .port_info 3 /INPUT 1 "Qn";
+v0x5fe9d7447330_0 .net "Q", 0 0, v0x5fe9d741ed70_0;  alias, 1 drivers
+v0x5fe9d74473d0_0 .net "Qn", 0 0, v0x5fe9d7446e20_0;  alias, 1 drivers
+v0x5fe9d74474a0_0 .var "clk", 0 0;
+v0x5fe9d74475a0_0 .var "d", 0 0;
+    .scope S_0x5fe9d7433cc0;
+T_0 ;
+    %wait E_0x5fe9d73f8080;
+    %load/vec4 v0x5fe9d7446f80_0;
+    %assign/vec4 v0x5fe9d741ed70_0, 0;
+    %load/vec4 v0x5fe9d7446f80_0;
+    %inv;
+    %assign/vec4 v0x5fe9d7446e20_0, 0;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x5fe9d74470c0;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5fe9d74474a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5fe9d74475a0_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x5fe9d74470c0;
+T_2 ;
+    %delay 5, 0;
+    %load/vec4 v0x5fe9d74474a0_0;
+    %inv;
+    %store/vec4 v0x5fe9d74474a0_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x5fe9d74470c0;
+T_3 ;
+    %wait E_0x5fe9d73f8080;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5fe9d74475a0_0, 0, 1;
+    %delay 8, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5fe9d74475a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5fe9d74475a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5fe9d74475a0_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call/w 3 30 "$finish" {0 0 0};
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x5fe9d7431100;
+T_4 ;
+    %vpi_call/w 3 38 "$monitor", $time, " c=%b d=%b Q=%b Qn=%b", v0x5fe9d74478a0_0, v0x5fe9d7447990_0, v0x5fe9d74476a0_0, v0x5fe9d7447790_0 {0 0 0};
+    %vpi_call/w 3 39 "$dumpfile", "dflipflop.vcd" {0 0 0};
+    %vpi_call/w 3 40 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5fe9d7431100 {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "Sequential/dflipflop.v";
