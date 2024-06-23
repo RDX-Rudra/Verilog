@@ -1,3 +1,5 @@
+// Exercise 8.2.3
+
 module fsm2_behavioral (
     output reg Dout,
     input wire clk,
