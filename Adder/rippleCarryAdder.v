@@ -6,7 +6,7 @@ module full_adder1b(
     xor(w1, a, b);
     xor(sum, w1, c);
     assign cout = ((a & b) | (b & c) | (c & a));
-endmodule
+endmodule //end_of_1bit_full_adder
 
 module parallel_adder4b (
     input [3:0]x, y,
@@ -19,7 +19,7 @@ module parallel_adder4b (
     full_adder1b FA2 (x[1], y[1], cout1, sum[1], cout2);
     full_adder1b FA3 (x[2], y[2], cout2, sum[2], cout3);
     full_adder1b FA4 (x[3], y[3], cout3, sum[3], carry);
-endmodule
+endmodule//end_of_parallel_adder
 
 module tb_adder4b(
 	output reg [3:0] bin1, bin2,
@@ -39,7 +39,7 @@ module tb_adder4b(
 		#5 {bin1,bin2,cin} = 9'b011100010;
         #5 $finish;
 	end
-endmodule
+endmodule//end_of_testbench
 
 module wb;
     wire [3:0] bin1, bin2, sum;
@@ -50,4 +50,4 @@ module wb;
     end
     parallel_adder4b dut (bin1, bin2, cin, sum, carry);
     tb_adder4b tb (bin1, bin2, cin, sum, carry);
-endmodule
+endmodule//end_of_workbench
