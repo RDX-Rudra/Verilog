@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1ps /* this directive indicates that all numbers used for delay have a unit of nanoseconds */
 
 /* ----------------------------------------------
  * Behavioral design of a simple processor (MU01)
